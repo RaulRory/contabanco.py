@@ -1,101 +1,55 @@
-from contaSalario import *
-from ContaEspecial import *
-from contaPoupaca import *
+from conta import Conta
+from conta_salario import ContaSalario
+
+def main():
+    contador  =  1
+
+    while contador > 0:
+
+        opcao = int(input(
+            "\n Digite: \n"
+            "1 - Criar uma conta \n"
+            "2 - Criar uma conta salário \n"
+            "3 - Criar uma conta Poupança \n"
+            "4 - Criar uma conta Especial \n"
+            "5 - Sair do Programa \n"
+        ))
 
 
+        if opcao == 1:
 
-contador = 1
+            nome = str(input("Como você se chama ? "))
+            numero_conta = int(input("Digite um numero para a sua conta: "))
+            saldo = float(input("Qual o valor do saldo inicial da sua conta ? "))
 
-listaContaSalario = []
-listaContaEspecial = []
-listaPoupanca = []
+            conta = Conta(nome, numero_conta, saldo)
+            conta.menu()
 
+        elif opcao == 2:
 
+            nome = str(input("Como você se chama ? "))
+            numero_conta = int(input("Digite um numero para a sua conta: "))
+            saldo = float(input("Qual o valor do saldo inicial da sua conta ? "))
 
+            conta_salario = ContaSalario(nome, numero_conta, saldo)
+            conta_salario.criarContaSalario()
+            conta_salario.menu()
 
-while contador > 0:
+        elif opcao == 3:
+            pass
 
-        opcSalario = int(input(print("Digite: \n"
-                                     "1 - Criar uma conta salário \n"
-                                     "2 - Tirar um extrato \n"
-                                     "3 - Efetuar um saque \n"
-                                     "4 - Efetuar um deposito \n")))
+        elif opcao == 4:
+            pass
+            
+        elif opcao == 5:
+            contador  =  -1
+        
+        else:
+            print('Caracter Invalido \n Digite um Numero valido pelo menu')
 
-        if opcSalario == 1:
-            salario = ContaSalario()
-            salario.criarContaSalario()
-
-        elif opcSalario == 2:
-            salario = ContaSalario()
-            salario.extrato()
-
-        elif opcSalario == 3:
-            salario = ContaSalario()
-            salario.saque()
-
-        elif opcSalario == 4:
-            ContaSalario.deposito()
-
-
+    print('Programa Encerrado, Bye Bye')
 
 
-
-    # if opc == 2:
-    #
-    #     opcPoupanca = int(input(print("Digite: \n"
-    #                                   "1 - Criar uma conta salário \n"
-    #                                   "2 - Tirar um extrato \n"
-    #                                   "3 - Efetuar um saque \n"
-    #                                   "4 - Efetuar um deposito \n"
-    #                                   "5 - investir na popança \n")))
-    #
-    #     if opcPoupanca == 1:
-    #         ContaPoupança.criarContaSalario()
-    #
-    #
-    #     elif opcPoupanca == 2:
-    #         salario = ContaPoupança.extrato()
-    #
-    #     elif opcPoupanca == 3:
-    #         ContaPoupança.saque()
-    #
-    #     elif opcPoupanca == 4:
-    #         ContaPoupança.deposito()
-    #
-    #     elif opcPoupanca == 5:
-    #         ContaPoupança.investir()
-    #
-    #
-    #
-    #
-    # if opc == 1:
-    #
-    #     opcEspecial = int(input(print("Digite: \n"
-    #                                   "1 - Criar uma conta salário \n"
-    #                                   "2 - Tirar um extrato \n"
-    #                                   "3 - Efetuar um saque \n"
-    #                                   "4 - Efetuar um deposito \n"
-    #                                   "5 - Receber credito \n")))
-    #
-    #     if opcSalario == 1:
-    #         salario = ContaSalario()
-    #         salario.criarContaSalario()
-    #
-    #
-    #     elif opcEspecial == 2:
-    #         salario = ContaSalario()
-    #         salario.extrato()
-    #
-    #     elif opcEspecial == 3:
-    #         contaEspecial.saque()
-    #
-    #     elif opcEspecial == 4:
-    #         contaEspecial.deposito()
-    #
-    #     elif opcEspecial == 5:
-    #         contaEspecial.receberCredito()
-
-
-
-
+if __name__ == "__main__":
+    main()
 
